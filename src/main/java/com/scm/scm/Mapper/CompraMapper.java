@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public class CompraMapper implements RowMapper<Compra> {
 
+    /*Metodo encargado de tener un mapeo de los datos que se encuentran en nuestro modelo asi como los que
+    * pertenecen a la tabla Compra*/
     @Override
     public Compra mapRow(ResultSet rs, int i) throws SQLException{
         Compra compra = new Compra();

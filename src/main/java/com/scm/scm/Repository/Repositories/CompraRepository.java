@@ -15,9 +15,11 @@ import java.util.List;
 @Repository
 public class CompraRepository implements CompraRep {
 
+    //Bean que nos permite tener acceso a las instrucciones que se le mandaran a nuestra base de datos
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    //Metodo para registrar compras
     @Override
     public boolean save(Compra object) {
         try {
@@ -39,11 +41,13 @@ public class CompraRepository implements CompraRep {
     }
 
 
+    //Metodo para Obtener todos los datos pertenecientes a la tabla compra y mandarlos a una lista de tipo compra
     @Override
     public List<Compra> findAll() {
         return jdbcTemplate.query("Select * from Compra",new CompraMapper());
     }
 
+    //Metodo para Obtener todos los datos pertenecientes a la tabla compra en donde el id sea igual al proporcionado y mandarlos a una lista de tipo compra
     @Override
     public Compra findById(int Id) {
         Object[] params = new Object[] {Id};

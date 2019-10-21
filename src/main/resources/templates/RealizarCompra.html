@@ -58,7 +58,7 @@
   <br><br>
 
   <label id="lbfolio"><b>Folio:</b></label>
-  <input th:field="*{idCompras}" th:value="*{idCompras}" type="text" id="txfolio"><br><br>
+  <input th:field="*{idCompras}" type="text" id="txfolio" readonly value="1"><br><br>
   <br>
   <br>
   <div id="marco">
@@ -71,12 +71,12 @@
   </select>
     
   <label id="lbcantidad">Cantidad:</label>
-      <input th:field="*{Cantidad}" th:value="*{Cantidad}" type="number" min="1" value="1" id="txcantidad"><br><br>
+      <input th:field="*{Cantidad}" type="number" min="1" value="1" id="txcantidad" required><br><br>
     
  <td>
  <label id="lbunidad">Unidad:</label>
     <br>
-     <select th:field="*{Unidad}" id="rb1">
+     <select th:field="*{Unidad}" id="rb1" style="font-size: 17px">
          <option th:value="gr">Gramo</option>
          <option th:value="Kg">Kilogramo</option>
          <option th:value="Ton">Tonelada</option>
@@ -93,12 +93,12 @@
     <br>
    
    <label id="lbvunitario"> Precio Unitario:</label>
-      <input th:field="*{Precio}" th:value="*{Precio}" type="number" min="1" value="1" id="txvunitario">
+      <input th:field="*{Precio}" type="number" min="1" value="1" id="txvunitario" required>
    
    <!--<label id="lbiva">IVA:</label><input type="text" id="txiva"><br><br><br>-->
 
     <label id="lbimporte">Importe:</label>
-      <input type="text" id="tximporte"><br><br>
+      <input type="text" id="tximporte" readonly><br><br>
 
     <button id="btguardar"><b>Guardar</b></button>
 

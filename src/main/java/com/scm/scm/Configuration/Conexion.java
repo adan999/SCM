@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 @ComponentScan
 public class Conexion {
 
+    //Bean utilizado para establecer la conexion con la base de datos
     @Bean
     public DataSource getDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
