@@ -1,0 +1,42 @@
+/*        BANNNER     */
+.banner{
+	width: 800px;
+	height: 300px;
+	border: 3px solid blue;
+	margin:auto;
+/*	background-image:url(cuatro.jpg);*/
+	background-size: 100% 100%;
+	/*
+	animation-name: banner;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;*/
+	
+	animation: baner 10s infinite;
+	animation-direction:alternate;
+}
+@keyframes baner{
+	0%, 30%{
+		background-image:url(rec.jpg);
+		opacity: 1;
+	
+	}
+	31%, 34%{
+		opacity: 0.1;
+	}
+	
+	35%, 65%{
+		background-image:url(n.jpg);
+		opacity: 1;
+	
+	}
+	66%, 69%
+	{
+		opacity: 0.1;
+	}
+	70%, 100%{
+		opacity: 1;
+		background-image:url(dos.jpg);
+	
+	}
+}
+	

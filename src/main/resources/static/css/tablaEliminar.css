@@ -1,0 +1,43 @@
+#tab{
+	margin: 150px auto;
+	
+	overflow:scroll;
+	  width:66%;
+height:80%;
+}
+#tab table{
+	width: 500px;
+	 background-color: lightgray;
+	
+}
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width:100%;
+}
+th , td{
+	padding:20px;
+}
+thead{
+	background-color:#246355;
+	border-bottom:solid 5px #0F362D;
+	color: white;
+}
+tr:nth-child(even){
+	background-color:#ddd;
+}
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+#marco
+  {
+	border: solid 1px;
+	border-color:#0f0;
+	height: 10%;
+	width: 100%;
+	background-color:#06DECA;
+	/*background-image:url(black.jpg);*/
+}
+}
