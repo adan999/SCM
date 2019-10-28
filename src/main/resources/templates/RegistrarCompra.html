@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head><title>Registrar Compra</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../Downloads/PROYEC/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.js">
+<link rel="stylesheet" type="text/css" href="../../../../../../Downloads/PROYEC/css/estilos.css" th:href="@{/css/estilos.css}">
+</head>
+<body>
+<div class="jumbotron">
+
+
+  <center><img src="../../../../../../Downloads/PROYEC/img/met.png" height="150px" width="150px"></center>
+</div>
+<!--   -------------------------------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><span class="icon-home3"> </span>Inicio <span class="sr-only">(current)</span></a>
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mantenimiento
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoCompras.html"> <span class="icon-cart"></span> Compra</a>
+          <a class="dropdown-item" href="#"> <span class="icon-dollar"> </span> Ventas </a>
+          <a class="dropdown-item" href="#"> <span class="icon-truck"> </span> Proveedores</a>
+        </div>
+      </li>
+     
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-clipboard"> </span>  Consultar Inventario
+        </a>
+        
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Materiales
+        </a>
+       
+      </li>
+     
+    
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="text-center">
+<h3>REGISTRAR COMPRAS</h3>
+</div>
+
+ <form>
+<br>
+ <div class="container">
+ <div class="float-right">
+ <label id="lbfecha" >Fecha: </label><input type="date" id="dtFechaRegistro" name="fecha">
+<br>
+  <label id="lbfolio"><b>Folio:</b></label>
+  <input type="text" id="txfolio">
+   </div>
+  
+   <br><br> <br> 
+     <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Material: </label>
+    <div class="col-sm-10">
+       <select id="inputState" class="form-control">
+        <option selected>Seleccionar</option>
+        <option>Carton</option>
+        <option>Aluminio</option>
+        <option>Cobre</option>
+        <option>Lamina</option>
+        <option>Plastico</option>
+        <option>Bronce</option>
+        <option>Fierro</option>
+        <option>Antimonio</option>
+        <option>Aceros inoxidables</option>
+      </select>
+    </div>
+     
+     
+    <div class="form-group col-md-6">
+        <label for="inputPassword4">Cantidad</label>
+     <input type="text" class="form-control" >
+    </div>
+ </div>
+ 
+ 
+ <div class="form-group col-md-4">
+      <label for="inputState">Unidad</label>
+      <select id="inputState" class="form-control">
+        <option selected>Seleccionar</option>
+        <option>Kilogramo</option>
+        <option>Tonelada</option>
+      </select>
+    </div>
+ 
+  
+  <div class="col-md-3 mb-3">
+      <label for="validationTooltip04">Valor Unitario</label>
+      <input type="text" class="form-control" id="validationTooltip04">
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationTooltip05">Importe</label>
+      <input type="text" class="form-control" id="validationTooltip05" >
+    </div>
+ 
+  <div class="float-right">
+   <button type="button" class="btn btn-secondary btn-lg"><img src="../../../../../../Downloads/PROYEC/img/cruz.png"> Cancelar</button>
+
+    <button type="button" class="btn btn-secondary btn-lg"><img src="../../../../../../Downloads/PROYEC/img/guardar.png"> Guardar</button>
+     </div>
+     </div>
+</form>
+</div>
+</body>
+</html>

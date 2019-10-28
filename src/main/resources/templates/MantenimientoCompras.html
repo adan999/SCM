@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" >
+<head><title>Mantenimiento Compras</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.js">
+<link rel="stylesheet" type="text/css" href="static/css/estilos.css" th:href="@{/css/estilos.css}">
+    <link rel="stylesheet" href="static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link rel="stylesheet" href="static/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="static/css/fonts.css">
+
+    <link rel="stylesheet" href="static/img" >
+</head>
+<body>
+<div class="jumbotron">
+
+
+  <center><img src="../static/img/met.png" height="150px" width="150px"></center>
+</div>
+<!--   -------------------------------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><span class="icon-home3"> </span>Inicio <span class="sr-only">(current)</span></a>
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="icon-spell-check"></span> Mantenimiento
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoCompras.html"> <span class="icon-cart"></span> Compra</a>
+          <a class="dropdown-item" href="#"> <span class="icon-dollar"> </span> Ventas </a>
+          <a class="dropdown-item" href="#"> <span class="icon-truck"> </span> Proveedores</a>
+        </div>
+      </li>
+     
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-clipboard"> </span>  Consultar Inventario
+        </a>
+        
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Materiales
+        </a>
+       
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+
+
+<div class="text-center">
+<h3>COMPRAS</h3>
+</div>
+<div class="container">
+
+ <div class="row">
+    <div class="col">
+  <span class="float-right">
+   <label for="inputPassword4">Buscar folio: </label>
+   
+  <input type="text" id="txfolio">
+  <button  class="btn btn-link"> <img src="img/archivo.png"></button>
+        </span>
+     </div>
+</div>
+
+ <button type="button" class="btn btn-secondary btn-lg"><img src="img/registro.png"> Registrar</button>
+<br><br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Folio</th>
+      <th scope="col">Material</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Unidad</th>
+      <th scope="col">Valor Unitario</th>
+      <th scope="col">Importe</th>
+      <th scope="col">Fecha</th>
+        <th scope="col">Estado</th>
+      <th scope="col">Cancelar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="compras : ${compra}">
+      <td th:text="${compras.idCompras}"></td>
+      <td th:text="${compras.NombreProd}"></td>
+      <td th:text="${compras.Cantidad}"></td>
+      <td th:text="${compras.Unidad}"></td>
+      <td th:text="${compras.Precio}"></td>
+      <td th:text="${compras.Total}"></td>
+      <td th:text="${compras.Fecha}"></td>
+      <td th:text="${compras.Estado}"></td>
+      <td><a class="btn btn-link" th:href="@{/compra/cancelarCompra?id=__${compras.idCompras}__}"><img src="static/img/cruz.png"></a></td>
+  </tr>
+
+
+  </tbody>
+</table>
+   <div class="float-right">
+    <button type="button" class="btn btn-secondary btn-lg btn-link" ><img src="static/img/aceptar.png">Aceptar</button>
+     </div>
+    </div>
+<!--class="btn btn-link"-->
+<script src="static/js/jquery.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>
