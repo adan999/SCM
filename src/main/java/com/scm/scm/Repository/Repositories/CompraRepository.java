@@ -21,7 +21,7 @@ public class CompraRepository implements CompraRep {
 
     //Metodo para registrar compras
     @Override
-    public boolean save(Compra object) {
+    public boolean registrar(Compra object) {
         try {
             String sql = String.format("insert into Compra (NombreProd, Cantidad, Estado, Fecha, Precio, Total, Unidad) " +
                     "values('%s', '%s', 'Realizada', '%s', '%s', '%s', '%s')",
@@ -37,7 +37,7 @@ public class CompraRepository implements CompraRep {
 
     //Metodo que recibe un id entero para modificar el estado de la compra
     @Override
-    public void update(int id)
+    public void modificar(int id)
     {
         try {
             String sql = String.format("UPDATE Compra SET Estado = 'Cancelado' WHERE idCompras = '" + id + "'");
@@ -50,7 +50,7 @@ public class CompraRepository implements CompraRep {
 
     //Metodo para Obtener todos los datos pertenecientes a la tabla compra y mandarlos a una lista de tipo compra
     @Override
-    public List<Compra> findAll() {
+    public List<Compra> consultar() {
         return jdbcTemplate.query("Select * from Compra",new CompraMapper());
     }
 

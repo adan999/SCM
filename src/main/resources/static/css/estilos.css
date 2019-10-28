@@ -11,12 +11,6 @@
 	width: 100%;
 }
 
-
-.img{
-	
-	
-
-}
 .jumbotron {
     margin-bottom: 0px;
     background-image: url(../img/blue.jpg);
@@ -28,4 +22,21 @@
 }
 .imag{
 	float: left;
+}
+
+.modal-header{
+    background-color: rgba(108,117,125,1.00);
+    color: white;
+}
+
+.modal{
+    border-radius: 5px;
+}
+
+.close{
+    color: white;
+}
+
+.topT{
+    margin-top: 10px;
 }

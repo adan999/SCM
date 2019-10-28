@@ -18,7 +18,7 @@ public class Compra {
 
     private String Unidad;
 
-    private double Total;
+    private float Total;
 
     private String Fecha;
 

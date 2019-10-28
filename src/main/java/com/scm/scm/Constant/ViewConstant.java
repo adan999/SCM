@@ -4,7 +4,7 @@ package com.scm.scm.Constant;
 public class ViewConstant {
 
     //Compras
-    public static String REGISTROC = "RealizarCompra";
+    public static String REGISTROC = "RegistrarCompra";
     public static String CONSULTAC = "MantenimientoCompras";
     public static String ELIMINARC = "EliminarCompra";
 }

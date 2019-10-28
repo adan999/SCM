@@ -20,7 +20,7 @@ public class CompraMapper implements RowMapper<Compra> {
         compra.setPrecio(rs.getDouble("Precio"));
         compra.setUnidad(rs.getString("Unidad"));
         compra.setEstado(rs.getString("Estado"));
-        compra.setTotal(rs.getDouble("Total"));
+        compra.setTotal(rs.getFloat("Total"));
         compra.setFecha(rs.getString("Fecha"));
 
         return compra;

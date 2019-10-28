@@ -7,11 +7,11 @@ import java.util.List;
 // ya que en la mayoria de los modelos se utilizaran los mismo metodos
 public interface BaseRepo<T> {
 
-    public boolean save(T object);
+    public boolean registrar(T object);
 
-    public void update(int id);
+    public void modificar(int id);
 
-    public List<T> findAll();
+    public List<T> consultar();
 
     public T findById(int Id);
 }
