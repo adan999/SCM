@@ -35,9 +35,16 @@ public class CompraRepository implements CompraRep {
         }
     }
 
+    //Metodo que recibe un id entero para modificar el estado de la compra
     @Override
-    public boolean update(Compra object) {
-        return false;
+    public void update(int id)
+    {
+        try {
+            String sql = String.format("UPDATE Compra SET Estado = 'Cancelado' WHERE idCompras = '" + id + "'");
+            jdbcTemplate.execute(sql);
+        }catch(Exception ex) {
+
+        }
     }
 
 

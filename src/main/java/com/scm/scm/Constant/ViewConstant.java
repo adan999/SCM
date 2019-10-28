@@ -5,6 +5,6 @@ public class ViewConstant {
 
     //Compras
     public static String REGISTROC = "RealizarCompra";
-    public static String CONSULTAC = "ConsultaCompra";
+    public static String CONSULTAC = "MantenimientoCompras";
     public static String ELIMINARC = "EliminarCompra";
 }

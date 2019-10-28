@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
@@ -71,5 +72,13 @@ public class CompraController {
         return "redirect:/compra/consultar";
     }
 
+
+    /*Metodo utilizado para cambiar el estado de una compra de "Realizada" a "Cancelada" y despues redirecciona a
+    * la misma página de consultar para obtener los datos actualizados*/
+    @GetMapping(path = "/cancelarCompra")
+    public String cancelCompra(@RequestParam(name = "id", required = true)int id){
+        compraRepository.update(id);
+        return "redirect:/compra/consultar";
+    }
 
 }

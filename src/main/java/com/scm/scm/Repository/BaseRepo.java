@@ -9,7 +9,7 @@ public interface BaseRepo<T> {
 
     public boolean save(T object);
 
-    public boolean update(T object);
+    public void update(int id);
 
     public List<T> findAll();
 
