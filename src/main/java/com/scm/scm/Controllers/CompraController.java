@@ -2,7 +2,7 @@ package com.scm.scm.Controllers;
 
 import com.scm.scm.Constant.ViewConstant;
 import com.scm.scm.Model.Compra;
-import com.scm.scm.Repository.Repositories.CompraRepository;
+import com.scm.scm.Services.impl.CompraServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +22,7 @@ public class CompraController {
 
     //Bean que nos permitira tener acceso a los elementos de la tabla compra y sus metodos correspondientes
     @Autowired
-    private CompraRepository compraRepository;
+    private CompraServiceImpl compraServiceImpl;
 
     public static final double IVA = 1.08;
 
@@ -30,7 +30,7 @@ public class CompraController {
     @GetMapping(path = "/consultar")
     public String consultarCompra(Model model){
         try {
-            model.addAttribute("compra", compraRepository.consultar());
+            model.addAttribute("compra", compraServiceImpl.consultarCompra());
             model.addAttribute("compras",new Compra());
         }
         catch (Exception e){
@@ -51,7 +51,7 @@ public class CompraController {
      * para solamente realizar la accion y redirigir a la pagina proporcionada*/
     @PostMapping(path = "/addCompra")
     public String realizarCompra(Compra compra, Model model){
-        List<Compra> compras = compraRepository.consultar();
+        List<Compra> compras = compraServiceImpl.consultarCompra();
         compras.add(compra);
         model.addAttribute("compras",compras);
 
@@ -66,7 +66,7 @@ public class CompraController {
         compra.setFecha(fechaActual);
 
         //Se Manda el objeto al metodo  save() donde nos regresara un resultado booleano, true si se registro y false en el caso contrario
-        if(compraRepository.registrar(compra)){
+        if(compraServiceImpl.realizarCompra(compra)){
             System.out.println("Entro");
         }
         else{
@@ -81,13 +81,13 @@ public class CompraController {
     * la misma página de consultar para obtener los datos actualizados*/
     @GetMapping(path = "/cancelarCompra")
     public String cancelCompra(@RequestParam(name = "id", required = true)int id){
-        compraRepository.modificar(id);
+        compraServiceImpl.cancelarCompra(id);
         return "redirect:/compra/consultar";
     }
 
     @GetMapping(path = "/buscarEspecificaCompra")
     public String consultaEspecificaCompra(@RequestParam(name = "id",required = true)int id, Model model){
-        Compra compras = compraRepository.findById(id);
+        Compra compras = compraServiceImpl.findById(id);
         model.addAttribute("compraE",compras);
 
         return "";
