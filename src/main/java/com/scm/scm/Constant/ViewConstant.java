@@ -7,4 +7,6 @@ public class ViewConstant {
     public static String REGISTROC = "RegistrarCompra";
     public static String CONSULTAC = "MantenimientoCompras";
     public static String ELIMINARC = "EliminarCompra";
+    public static String CONSULTATM = "Tmateriales";
+    public static String CONSULTAM = "MantenimientoMateriales";
 }
