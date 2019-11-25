@@ -11,6 +11,12 @@
 	width: 100%;
 }
 
+
+.img{
+	
+	
+
+}
 .jumbotron {
     margin-bottom: 0px;
     background-image: url(../img/blue.jpg);
@@ -24,19 +30,52 @@
 	float: left;
 }
 
-.modal-header{
-    background-color: rgba(108,117,125,1.00);
-    color: white;
+.marcoMateriales{
+	border:solid 1px;
+    padding: 10px;
+    margin:0 auto;
+    height: 100%;
+    width: 100%;
+    border-color: blue;
+    background-color: #E8E2E2;
+      border-radius: 0.5rem;
+
+}
+.marcoCompras{
+	border:solid 1px;
+    padding: 10px;
+    margin:0 auto;
+    height: 100%;
+    width: 80%;
+    border-color: blue;
+    background-color: #E8E2E2;
+      border-radius: 0.5rem;
+
 }
 
-.modal{
-    border-radius: 5px;
+.tituloCompras
+{
+
+font-family: "Times New Roman", Times, serif;
+	color: white;
+	background-color: #3D3C3C;
+	width: 50%;
+	border-color: blue;
+	  border-radius: 0.5rem;
+
+
 }
 
-.close{
-    color: white;
+.tituloMateriales
+{
+
+	font-family: "Times New Roman", Times, serif;
+	color: white;
+	background-color: #3D3C3C;
+	width: 50%;
+	height: 50%;
+	border-color: blue;
+	  border-radius: 0.5rem;
+
 }
 
-.topT{
-    margin-top: 10px;
-}
