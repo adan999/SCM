@@ -2,12 +2,9 @@ package com.scm.scm.Services;
 
 import com.scm.scm.Model.Compra;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Pageable;
 import java.util.List;
 
-//Interface de Repositorio Generico,
-// ya que en la mayoria de los modelos se utilizaran los mismo metodos
+//Interface donde se declararan los metodos para manipular los datos de Compras
 @Service("compraService")
 public interface CompraService {
 

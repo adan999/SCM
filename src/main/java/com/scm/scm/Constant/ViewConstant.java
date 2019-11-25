@@ -9,4 +9,9 @@ public class ViewConstant {
     public static String ELIMINARC = "EliminarCompra";
     public static String CONSULTATM = "Tmateriales";
     public static String CONSULTAM = "MantenimientoMateriales";
+    //Compra
+    public static String MANTCOMPRAS = "MantenimientoCompras";
+
+    //Proveedor
+    public static String MANTPROVEEDORES = "MantenimientoProveedores";
 }

@@ -37,14 +37,14 @@ public class CompraController {
             System.out.println("Error: "+e.getMessage());
         }
 
-        return ViewConstant.CONSULTAC;
+        return ViewConstant.MANTCOMPRAS;
     }
 
     /*Metodo utilizado para entrar en la vista del formulario*/
     @GetMapping(path = "/realizar")
     public ModelAndView getForm(){
 
-        return new ModelAndView(ViewConstant.REGISTROC).addObject("compra", new Compra());
+        return new ModelAndView(ViewConstant.MANTCOMPRAS).addObject("compra", new Compra());
     }
 
     /*Metodo que permite agregar regisitros, en donde se utiliza @PostMapping

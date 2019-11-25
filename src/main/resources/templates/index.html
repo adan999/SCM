@@ -1,22 +1,22 @@
-<!DOCTYPE html html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>  METALURGICA Mxli </title>
-	<link rel="stylesheet" href="static/css/bootstrap.css">
-	<link rel="stylesheet" href="static/css/estilos.css">
-	<link rel="stylesheet" href="static/css/style.css">
-	<link rel="stylesheet" href="static/css/fonts.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
 
-	<link rel="stylesheet" href="static/css/img">
+	<link rel="stylesheet" href="img">
 	
 </head>
 <body>
 <div class="jumbotron">
 
 
-	<center><img src="static/img/met.png" height="150px" width="150px"></center>
+	<center><img src="img/met.png" height="150px" width="150px"></center>
 </div>
 <!--   -------------------------------------------------------------------------------------------------------->
 	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
@@ -32,30 +32,48 @@
       </li>
      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mantenimiento
+        <a class="nav-link dropdown-toggle" href="MantenimientoCompras.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="icon-cart"></span> Compras
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="consultar"> <span class="icon-cart"></span> Compra</a>
-          <a class="dropdown-item" href="#"> <span class="icon-dollar"> </span> Ventas </a>
-          <a class="dropdown-item" href="#"> <span class="icon-truck"> </span> Proveedores</a>
+          <a class="dropdown-item" href="MantenimientoCompras.html"> <span class="icon-cart"></span> Consultar Compras</a>
+          
         </div>
       </li>
      
       </li>
        <li class="nav-item dropdown">
-        <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="icon-clipboard"> </span>  Consultar Inventario
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-dollar"> </span>  Ventas
         </a>
-        
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"> <span class="icon-dollar"></span> Consultar Ventas</a>
+          
+        </div>
+
+        </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-truck"> </span>  Proveedores
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoProveedores1.html"> <span class="icon-truck"></span> Consultar Proveedores</a>
+          
+        </div>
+
       </li>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Materiales
+         <span class="icon-recycle"> </span>  Materiales
         </a>
-       
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoMateriales.html"> <span class="icon-dollar"></span> Consultar Materiales</a>
+          
+        </div>
       </li>
-    </ul>
+
+     
+     
     
   </div>
 </nav>
@@ -63,8 +81,8 @@
 
 
 		
-		<script src="static/js/jquery.js"></script>
-		<script src="static/js/bootstrap.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	
 </body>
 </html>
