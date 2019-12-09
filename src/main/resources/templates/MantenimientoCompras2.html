@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head><title>Mantenimiento Compras Minoristas</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.js" th:href="@{/css/bootstrap.min.js}">
+<link rel="stylesheet" type="text/css" href="css/estilos.css" th:href="@{/css/estilos.css}">
+  <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
+  <link rel="stylesheet" href="css/fonts.css" th:href="@{/css/fonts.css}">
+</head>
+<body>
+<div class="jumbotron">
+
+
+  <center><img src="img/met.png" th:src="@{/img/met.png}" height="150px" width="150px"></center>
+</div>
+<!--INICIO BOTONES   -------------------------------------------------------------------------------------------------------->
+   <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<!--FIN BOTONTES -->
+
+<!-- INICIO MENU -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index"><span class="icon-home3"> </span> Inicio <span class="sr-only">(current)</span></a>
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="icon-cart"></span> Compras
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoCompras">  Proveedores</a>
+          <a class="dropdown-item" href="MantenimientoCompras2"> Clientes Particulares </a>
+        
+        </div>
+      </li>
+     
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-dollar"> </span>  Ventas
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoVentas">  Consultar Ventas</a>
+          
+        </div>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-truck"> </span>  Proveedores
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="MantenimientoProveedores"> Consultar Proveedores</a>
+          
+        </div>
+      </li>
+
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="icon-recycle"> </span>  Materiales
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Tmateriales"> Materiales</a>
+          <a class="dropdown-item" href="MantenimientoMateriales">  Tipos Materiales</a>
+          
+        </div>
+      </li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="icon-user"> </span> Usuarios
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="MantenimientoUsuarios">  Consultar Usuarios </a>
+          
+          <!-- 
+        </div>
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="icon-notebook-list"> </span> Inventario
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item2" href="Inventario"> Consultar Inventario </a>
+        </div>
+  -->    
+    
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<script type="text/javascript">
+    /* Funcion suma. */
+    function SumarAutomatico (valor) {
+        if(valor == null){
+
+        }else{
+        var TotalSuma = 0;
+        var Total = 0;
+        valor = parseFloat(valor); // Convertir a numero entero (número).
+        TotalSuma = document.getElementById('MiSubTotal').innerHTML;
+        // Valida y pone en cero "0".
+        TotalSuma = (TotalSuma == null || TotalSuma == undefined || TotalSuma == "") ? 0 : TotalSuma;
+        /* Variable genrando la suma. */
+        if(TotalSuma == 0){
+        TotalSuma = (parseFloat(TotalSuma) + parseFloat(valor));
+        }else{
+            TotalSuma = (parseFloat(TotalSuma) * parseFloat(valor));
+            Total = (parseFloat(TotalSuma)*1.08);
+        }
+        // Escribir el resultado en una etiqueta "span".
+        document.getElementById('MiSubTotal').innerHTML = TotalSuma;
+        document.getElementById('MiTotal').innerHTML = Total;
+        }
+    }
+
+
+
+</script>
+<!-- Ventana para Registrar  Compras -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <form class="modal-content" th:action="@{/compraMinorista/addCompraMinorista}" method="post" th:object="${comprasMinorista}">
+
+                <div class="modal-header text-center">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Registrar Compra(Minorista)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-row justify-content-start">
+                        <!--<div class="form-group col-md-4">
+                            <label>Fecha:</label>
+                            <input  type="date" class="form-control" readonly>
+                        </div>-->
+                         <div class="form-group col-md">
+                            <label>Nombre Cliente:</label>
+                            <input type="text"  class="form-control" th:field="*{nomCliente}" required>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-start">
+                        <div class="form-group col-md-4">
+                            <label>Folio:</label>
+                            <input  type="text" class="form-control" th:field="*{folioSegura}" required>
+                        </div>
+                        <div class="form-group col-md">
+                            <label>Direccion:</label>
+                            <input  type="text"  class="form-control" th:field="*{dirCliente}" required>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                    <div class="form-group col-md">
+                        <label>Material:</label>
+                        <select  th:field="*{idMaterial}" class="form-control2" required>
+                            <option th:each="materiales : ${material}" th:value="${materiales.idMaterial}" th:text="${materiales.idMaterial+'-'+materiales.nomMaterial}"></option>
+                        </select>
+                    </div>
+                        
+                        <div class="form-group col-md">
+                            <label>Unidad:</label>
+                            <select  class="form-control" disabled="">
+                              
+                                <option >Kilogramo</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label>Cantidad:</label>
+                            <input  type="number" min="1" value="1" class="form-control" th:field="*{cantidad}" onchange="SumarAutomatico(this.value);" required>
+                        </div>
+                         <div class="form-group col-md-4">
+                                <label>Iva:</label>
+                                <input type="text" class="form-control" value="8%" readonly>
+                            </div>
+
+
+                        <div class="form-group col-md">
+                            <label>Precio Unitario:</label>
+                            <input  type="number" min="1" value="1" class="form-control" step=".01" th:field="*{precio}" onchange="SumarAutomatico(this.value);" required>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-end">
+							 <div class="form-group col-md-4">
+                                <label>SubTotal:</label>
+                                <!--<input type="text" class="form-control" readonly>--><span id="MiSubTotal"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Importe Total:</label>
+                                <!--<input type="text" class="form-control" readonly>--><span id="MiTotal"></span>
+                            </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-secondary btn-lg"><img th:src="@{/img/cruz.png}"> Cancelar</button>
+                    <button class="btn btn-secondary btn-lg"><img th:src="@{/img/guardar.png}"> Realizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Fin Ventana Registrar Compras -->
+
+
+
+
+<center>
+<div class="tituloCompras">
+<center> <h3>Compras - Cliente Minorista</h3></center>
+</div>
+</center>
+<br>
+<br>
+<div class="marcoCompras">
+<div class="container">
+
+ <div class="row">
+     <div class="col">
+  <span class="float-right">
+
+   <label for="inputPassword4">Buscar folio: </label>
+   
+  <input type="text">
+  <button  class="btn btn-link"> <img th:src="@{/img/archivo.png}"></button>
+
+        </span>
+     </div>
+
+</div>
+
+<button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#exampleModalCenter"><img th:src="@{/img/bloc.png}" src="../static/img/bloc.png" width="30px" height="30px"> </button>
+
+
+
+
+
+
+
+<br><br>
+<center>
+  <div class="table-responsive">
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Folio</th>
+      <th scope="col">Fecha de compra</th>
+        <th scope="col">Nombre de Cliente </th>
+      <th scope="col">Direccion </th>
+      <th scope="col">Material</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio Unitario</th>
+        <th scope="col">SubTotal</th>
+        <th scope="col">Iva</th>
+      <th scope="col">Total</th>
+        <th scope="col">Estado</th>
+      <th scope="col">Cancelar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr th:each="comprasMinoristas : ${compraMinorista}">
+        <td th:text="${comprasMinoristas.folioSegura}"></td>
+        <td th:text="${comprasMinoristas.fechaComp}"></td>
+        <td th:text="${comprasMinoristas.nomCliente}"></td>
+        <td th:text="${comprasMinoristas.dirCliente}"></td>
+        <td th:text="${comprasMinoristas.nomMaterial}"></td>
+        <td th:text="${comprasMinoristas.cantidad}"></td>
+        <td th:text="${comprasMinoristas.precio}"></td>
+        <td th:text="${comprasMinoristas.subTotalComp}"></td>
+        <td th:text="${comprasMinoristas.iva}"></td>
+        <td th:text="${comprasMinoristas.totalComp}"></td>
+        <td th:text="${comprasMinoristas.estadoComp}"></td>
+        <!--<td th:text="${materiales.idMaterialCat}"></td>-->
+        <td><a class="btn btn-link" th:href="@{/compraMinorista/cancelarCompra?folioSegura=__${comprasMinoristas.folioSegura}__}"> <img th:src="@{/img/cruz.png}" ></a></td>
+
+    </tr>
+
+
+
+
+
+   
+  </tbody>
+
+</table>
+</center>
+</div>
+<br>
+  
+     
+    </div>
+    <br>
+    <br>
+    <!--class="btn btn-link"-->
+<script src="js/jquery.js" th:src="@{/js/jquery.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
