@@ -13,7 +13,7 @@ public interface TipoMaterialService {
 
     public List<TipoMaterial> consultarTipoMaterial();
 
-    public TipoMaterial findById(int Id);
+    public TipoMaterial findById(int id);
 
     public boolean realizarTipoMaterial(TipoMaterial tipoMaterial);
 

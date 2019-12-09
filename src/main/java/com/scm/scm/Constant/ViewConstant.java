@@ -10,8 +10,12 @@ public class ViewConstant {
     public static String CONSULTATM = "Tmateriales";
     public static String CONSULTAM = "MantenimientoMateriales";
     //Compra
-    public static String MANTCOMPRAS = "MantenimientoCompras";
+    public static String MANTCOMPRASMIN = "MantenimientoCompras2";
 
     //Proveedor
     public static String MANTPROVEEDORES = "MantenimientoProveedores";
+
+    //Venta
+    public static String VENTAM = "MantenimientoVentas";
+
 }

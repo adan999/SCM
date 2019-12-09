@@ -37,17 +37,11 @@ public class TipoMaterialController {
         catch (Exception e){
             System.out.println("Error: "+e.getMessage());
         }
-
         return ViewConstant.CONSULTATM;
     }
 
     /*@GetMapping(path = "/consultaEspecificaTipo/{id}")
     public String consultaEspecificaTipo(Model model,@RequestParam(name = "id", required = true)int id){
-
-
-
-
-
     }*/
 
     /*Metodo utilizado para entrar en la vista del formulario*/
@@ -68,9 +62,7 @@ public class TipoMaterialController {
         //Se envian cantidad, entradas y salidas en 0
         double cantidad = 0;
         tipoMaterial.setCantidad(Double.parseDouble(String.format("%.2f",cantidad)));
-        tipoMaterial.setEntradas(Double.parseDouble(String.format("%.2f", cantidad)));
-        tipoMaterial.setSalidas(Double.parseDouble(String.format("%.2f", cantidad)));
-
+        tipoMaterial.setUnidadMedida("Kilogramos");
 
         //Se inserta un id generado automaticamente
 

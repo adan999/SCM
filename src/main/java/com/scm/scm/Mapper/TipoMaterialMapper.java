@@ -16,11 +16,11 @@ public class TipoMaterialMapper implements RowMapper<TipoMaterial> {
         TipoMaterial tipoMaterial = new TipoMaterial();
 
         tipoMaterial.setIdMaterialCat(rs.getInt("idMaterialCat"));
+        tipoMaterial.setCodigoTipo(rs.getString("codigoTipo"));
         tipoMaterial.setNomCategoria(rs.getString("NomCategoria"));
         tipoMaterial.setUnidadMedida(rs.getString("UnidadMedida"));
         tipoMaterial.setCantidad(rs.getDouble("Cantidad"));
-        tipoMaterial.setEntradas(rs.getDouble("Entradas"));
-        tipoMaterial.setSalidas(rs.getDouble("Salidas"));
+
 
         return tipoMaterial;
     }

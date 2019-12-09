@@ -22,9 +22,9 @@ public class TipoMaterialServiceImpl implements TipoMaterialService{
     @Override
     public boolean realizarTipoMaterial(TipoMaterial object) {
         try {
-            String sql = String.format("insert into TipoMaterial (IdMaterialCat, NomCategoria, UnidadMedida,  Cantidad, Entradas, Salidas) " +
-                            "values('%s', '%s', '%s', '%s', '%s', '%s')",
-                    object.getIdMaterialCat(),object.getNomCategoria(), object.getUnidadMedida(), object.getCantidad(), object.getEntradas(), object.getSalidas());
+            String sql = String.format("insert into TipoMaterial (CodigoTipo, NomCategoria, UnidadMedida,  Cantidad, usuario_idUsuario) " +
+                            "values('%s', '%s', '%s', '%s', '3')",
+                    object.getCodigoTipo(), object.getNomCategoria(), object.getUnidadMedida(), object.getCantidad());
             jdbcTemplate.execute(sql);
             return true;
         }
@@ -44,8 +44,8 @@ public class TipoMaterialServiceImpl implements TipoMaterialService{
 
     //Metodo para Obtener todos los datos pertenecientes a la tabla tipoMaterial en donde el id sea igual al proporcionado y mandarlos a una lista de tipo TipoMaterial
     @Override
-    public TipoMaterial findById(int Id) {
-        Object[] params = new Object[] {Id};
+    public TipoMaterial findById(int id) {
+        Object[] params = new Object[] {id};
         return jdbcTemplate.queryForObject("Select * from TipoMaterial where idMaterialCat=?",params,new TipoMaterialMapper());
     }
 

@@ -10,9 +10,12 @@ import java.util.List;
 public interface MaterialService {
     public List<Material> consultarMaterial();
 
-    //public Material findById(int Id);
+    public Material findById(int Id);
 
     public boolean realizarMaterial(Material material);
 
     public boolean modificarMaterial(Material material);
+
+    public boolean entradasMaterial(int id, double cantidad);
+
 }

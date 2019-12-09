@@ -1,6 +1,7 @@
 package com.scm.scm.Controllers;
 
 import com.scm.scm.Constant.ViewConstant;
+import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.Material;
 import com.scm.scm.Model.TipoMaterial;
 import com.scm.scm.Services.impl.MaterialServiceImpl;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.SQLOutput;
@@ -35,7 +37,7 @@ public class MaterialController {
             model.addAttribute("material", materialServiceImpl.consultarMaterial());
             model.addAttribute("materiales",new Material());
             model.addAttribute("tipoMaterial", tipoMaterialServiceImpl.consultarTipoMaterial());
-            model.addAttribute("tipomateriales", new TipoMaterial());
+            model.addAttribute("tipoMateriales", new TipoMaterial());
         }
         catch (Exception e){
             System.out.println("Error: "+e.getMessage());
@@ -46,10 +48,6 @@ public class MaterialController {
 
     /*@GetMapping(path = "/consultaEspecificaTipo/{id}")
     public String consultaEspecificaTipo(Model model,@RequestParam(name = "id", required = true)int id){
-
-
-
-
 
     }*/
 
@@ -64,25 +62,17 @@ public class MaterialController {
      * para solamente realizar la accion y redirigir a la pagina proporcionada*/
     @PostMapping(path = "/addMaterial")
     public String realizarMaterial(Material material, Model model){
-        List<Material> materiales = materialServiceImpl.consultarMaterial();
+        /*List<Material> materiales = materialServiceImpl.consultarMaterial();
         materiales.add(material);
         model.addAttribute("materiales",materiales);
-
+        */
         //se obtiene el id para buscar el tipo de material y asi sumar la cantidad ingresada con la cantidad en existencia
         int id = material.getIdMaterialCat();
         TipoMaterial tipoMaterial = tipoMaterialServiceImpl.findById(id);
         double cantidadTipo= tipoMaterial.getCantidad();
-        double cantidadMater = material.getCantidadInicial();
-
+        double cantidadMater = material.getCantidadActual();
         double cantidadNueva = cantidadTipo + cantidadMater;
-
-
         material.setUnidadMedida("Kilogramos");
-        double cantidad = 0;
-        material.setEntradas(Double.parseDouble(String.format("%.2f", cantidad)));
-        material.setSalidas(Double.parseDouble(String.format("%.2f", cantidad)));
-
-        material.setCantidadActual(material.getCantidadInicial());
 
         //Se Manda el objeto al metodo  save() donde nos regresara un resultado booleano, true si se registro y false en el caso contrario
         if(materialServiceImpl.realizarMaterial(material)){
@@ -118,5 +108,13 @@ public class MaterialController {
             System.out.println("No entro");
         }
         return "redirect:/material/consultarMaterial";
+    }
+
+    @GetMapping(path = "/buscarEspecificaMaterial")
+    public String consultaEspecificaMaterial(@RequestParam(name = "id",required = true)int id, Model model){
+        Material materiales = materialServiceImpl.findById(id);
+        model.addAttribute("materialE",materiales);
+
+        return "";
     }
 }
