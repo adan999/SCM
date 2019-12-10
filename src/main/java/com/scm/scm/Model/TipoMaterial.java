@@ -12,7 +12,7 @@ public class TipoMaterial {
     private String nomCategoria;
     private String unidadMedida;
     private double cantidad;
-    private int idUsuario;
+    private String nomUsuario;
 
 
 }

@@ -1,6 +1,5 @@
 package com.scm.scm.Services;
 
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.TipoMaterial;
 import org.springframework.stereotype.Service;
 

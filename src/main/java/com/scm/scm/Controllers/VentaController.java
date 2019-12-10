@@ -2,14 +2,8 @@ package com.scm.scm.Controllers;
 
 
 import com.scm.scm.Constant.ViewConstant;
-import com.scm.scm.Model.CompraMinorista;
-import com.scm.scm.Model.Material;
-import com.scm.scm.Model.TipoMaterial;
-import com.scm.scm.Model.Venta;
-import com.scm.scm.Services.impl.CompraMinoristaServiceImpl;
-import com.scm.scm.Services.impl.MaterialServiceImpl;
-import com.scm.scm.Services.impl.TipoMaterialServiceImpl;
-import com.scm.scm.Services.impl.VentaServiceImpl;
+import com.scm.scm.Model.*;
+import com.scm.scm.Services.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +31,9 @@ public class VentaController {
 
     @Autowired
     private TipoMaterialServiceImpl tipoMaterialServiceImpl;
+
+    @Autowired
+    private MayoristaServiceImpl mayoristaServiceImpl;
 
     public static final double IVA = 1.08;
 

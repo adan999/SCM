@@ -2,11 +2,9 @@ package com.scm.scm.Controllers;
 
 
 import com.scm.scm.Constant.ViewConstant;
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.CompraMinorista;
 import com.scm.scm.Model.Material;
 import com.scm.scm.Model.TipoMaterial;
-import com.scm.scm.Services.CompraMinoristaService;
 import com.scm.scm.Services.impl.CompraMinoristaServiceImpl;
 import com.scm.scm.Services.impl.MaterialServiceImpl;
 import com.scm.scm.Services.impl.TipoMaterialServiceImpl;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
-import java.util.List;
 
 //Notacion declarada para que el sistema sepa que esta clase pertenece al componente Controller
 @Controller
@@ -47,19 +44,20 @@ public class CompraMinoristaController {
 
             model.addAttribute("material", materialServiceImpl.consultarMaterial());
             model.addAttribute("materiales",new Material());
+
         }
         catch (Exception e){
             System.out.println("Error: "+e.getMessage());
         }
 
-        return ViewConstant.MANTCOMPRASMIN;
+        return ViewConstant.MANTCOMPRASMINO;
     }
 
     /*Metodo utilizado para entrar en la vista del formulario*/
     @GetMapping(path = "/realizar")
     public ModelAndView getForm(){
 
-        return new ModelAndView(ViewConstant.MANTCOMPRASMIN).addObject("compraMinorista", new CompraMinorista());
+        return new ModelAndView(ViewConstant.MANTCOMPRASMINO).addObject("compraMinorista", new CompraMinorista());
     }
 
     /*Metodo que permite agregar regisitros, en donde se utiliza @PostMapping
@@ -181,14 +179,14 @@ public class CompraMinoristaController {
             compraMinorista.setNomMaterial(compraMinorista.getNomMaterial());
             compraMinorista.setEstadoComp(compraMinorista.getEstadoComp());
             compraMinorista.setIdMaterial(compraMinorista.getIdMaterial());
-            compraMinorista.setIdUsuario(compraMinorista.getIdUsuario());
+            compraMinorista.setNomUsuario(compraMinorista.getNomUsuario());
 
 
         }
 
         model.addAttribute("compraMinorista", compraMinorista);
 
-        return ViewConstant.MANTCOMPRASMIN;
+        return ViewConstant.MANTCOMPRASMINO;
     }
 
 

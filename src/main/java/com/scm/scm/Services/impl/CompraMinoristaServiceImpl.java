@@ -1,12 +1,8 @@
 package com.scm.scm.Services.impl;
 
-import com.scm.scm.Mapper.CompraMapper;
 import com.scm.scm.Mapper.CompraMinorista2Mapper;
 import com.scm.scm.Mapper.CompraMinoristaMapper;
-import com.scm.scm.Mapper.MaterialMapper;
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.CompraMinorista;
-import com.scm.scm.Model.Material;
 import com.scm.scm.Services.CompraMinoristaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//Clase tipo service que nos permitira realizar nuestros metodos para registrar, cancelar y consultar las compras a minoristas
 @Service("CompraMinoristaServiceImpl")
 public class CompraMinoristaServiceImpl implements CompraMinoristaService {
 
@@ -24,13 +21,13 @@ public class CompraMinoristaServiceImpl implements CompraMinoristaService {
 
 
 
-    //Metodo para registrar compras
+    //Metodo para registrar compras a clientes minoristas
     @Override
     public boolean realizarCompraMinorista(CompraMinorista object) {
         try {
             System.out.println(object.getIdMaterial());
-            String sql = String.format("insert into CompraMinorista (FolioSegura, FechaComp, NomCliente, DirCliente, Cantidad, Precio, SubTotalComp, Iva, TotalComp, EstadoComp, Material_idMaterial, Usuario_idUsuario) " +
-                            "values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '3')",
+            String sql = String.format("insert into CompraMinorista (FolioSegura, FechaComp, NomCliente, DirCliente, Cantidad, Precio, SubTotalComp, Iva, TotalComp, EstadoComp, Material_idMaterial, usuario_nomUsuario) " +
+                            "values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 'root2')",
                     object.getFolioSegura(), object.getFechaComp(), object.getNomCliente(), object.getDirCliente(), object.getCantidad(), object.getPrecio() ,object.getSubTotalComp(), object.getIva(), object.getTotalComp(),object.getEstadoComp(), object.getIdMaterial());
             jdbcTemplate.execute(sql);
             return true;
@@ -47,8 +44,8 @@ public class CompraMinoristaServiceImpl implements CompraMinoristaService {
     @Override
     public List<CompraMinorista> consultarCompraMinorista() {
         return jdbcTemplate.query("Select folioSegura, fechaComp, nomCliente," +
-                " dirCliente, subTotalComp, cantidad, precio, iva, totalComp, estadoComp, idMaterial, nomMaterial, idUsuario from CompraMinorista join Material " +
-                " ON (compraMinorista.Material_idMaterial = idMaterial) join usuario ON (compraMinorista.Usuario_idUsuario = idUsuario)", new CompraMinoristaMapper());
+                " dirCliente, subTotalComp, cantidad, precio, iva, totalComp, estadoComp, idMaterial, nomMaterial, nomUsuario from CompraMinorista join Material " +
+                " ON (compraMinorista.Material_idMaterial = idMaterial) join usuario ON(compraMinorista.usuario_nomUsuario = nomUsuario)", new CompraMinoristaMapper());
     }
 
     //Metodo que recibe un folio string para modificar el estado de la compra

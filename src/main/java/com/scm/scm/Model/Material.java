@@ -13,6 +13,6 @@ public class Material {
     private double cantidadActual;
     private int idMaterialCat;
     private String nomCategoria;
-    private int idUsuario;
+    private String nomUsuario;
 
 }

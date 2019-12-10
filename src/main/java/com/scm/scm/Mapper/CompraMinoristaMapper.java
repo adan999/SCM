@@ -1,6 +1,5 @@
 package com.scm.scm.Mapper;
 
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.CompraMinorista;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -28,7 +27,7 @@ public class CompraMinoristaMapper implements RowMapper<CompraMinorista> {
         compraMinorista.setNomMaterial(rs.getString("nomMaterial"));
         compraMinorista.setEstadoComp(rs.getString("estadoComp"));
         compraMinorista.setIdMaterial(rs.getInt("idMaterial"));
-        compraMinorista.setIdUsuario(rs.getInt("idUsuario"));
+        compraMinorista.setNomUsuario(rs.getString("nomUsuario"));
 
         return compraMinorista;
     }

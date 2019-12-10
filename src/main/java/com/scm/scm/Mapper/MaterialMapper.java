@@ -1,7 +1,6 @@
 package com.scm.scm.Mapper;
 
 import com.scm.scm.Model.Material;
-import com.scm.scm.Model.TipoMaterial;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -12,8 +11,6 @@ public class MaterialMapper implements RowMapper<Material> {
     @Override
     public Material mapRow(ResultSet rs, int i) throws SQLException {
         Material material = new Material();
-
-
 
         material.setIdMaterial(rs.getInt("idMaterial"));
         material.setCodigoMaterial(rs.getString("codigoMaterial"));

@@ -1,8 +1,6 @@
 package com.scm.scm.Services.impl;
 
-import com.scm.scm.Mapper.CompraMapper;
 import com.scm.scm.Mapper.TipoMaterialMapper;
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.TipoMaterial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,8 +20,8 @@ public class TipoMaterialServiceImpl implements TipoMaterialService{
     @Override
     public boolean realizarTipoMaterial(TipoMaterial object) {
         try {
-            String sql = String.format("insert into TipoMaterial (CodigoTipo, NomCategoria, UnidadMedida,  Cantidad, usuario_idUsuario) " +
-                            "values('%s', '%s', '%s', '%s', '3')",
+            String sql = String.format("insert into TipoMaterial (CodigoTipo, NomCategoria, UnidadMedida,  Cantidad, usuario_nomUsuario) " +
+                            "values('%s', '%s', '%s', '%s', 'root3')",
                     object.getCodigoTipo(), object.getNomCategoria(), object.getUnidadMedida(), object.getCantidad());
             jdbcTemplate.execute(sql);
             return true;

@@ -1,8 +1,8 @@
 package com.scm.scm.Model;
 
-//Modelo de Proveedor, donde las variables hacen referencia a las columnas de su respectiva tabla en la base de datos
-public class Proveedor {
-    private int idProveedor;
+//Modelo de Mayorista, donde las variables hacen referencia a las columnas de su respectiva tabla en la base de datos
+public class Mayorista {
+    private int idMayorista;
 
     private String rfc;
 
@@ -12,13 +12,15 @@ public class Proveedor {
 
     private String numTel;
 
+    private String nomUsuario;
+
     //En esta seccion se generan los metodos get() y set()
-    public int getIdProveedor() {
-        return idProveedor;
+    public int getIdMayorista() {
+        return idMayorista;
     }
 
-    public void setIdProveedor(int idProveedor) {
-        this.idProveedor = idProveedor;
+    public void setIdMayorista(int idMayorista) {
+        this.idMayorista = idMayorista;
     }
 
     public String getRfc() {
@@ -51,5 +53,13 @@ public class Proveedor {
 
     public void setNumTel(String numTel) {
         this.numTel = numTel;
+    }
+
+    public String getNomUsuario() {
+        return nomUsuario;
+    }
+
+    public void setNomUsuario(String nomUsuario) {
+        this.nomUsuario = nomUsuario;
     }
 }

@@ -11,9 +11,9 @@ public interface UsuarioService {
 
     public boolean registrarUsuario(Usuario usuario);
 
-    public void modificarUsuario(int id, Usuario usuario);
+    public boolean modificarUsuario(Usuario usuario);
 
     public List<Usuario> consultarUsuario();
 
-    public Usuario findById(int Id);
+    public Usuario findByUsername(String username);
 }

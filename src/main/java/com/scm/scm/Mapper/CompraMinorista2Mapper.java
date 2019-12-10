@@ -26,7 +26,7 @@ public class CompraMinorista2Mapper  implements RowMapper<CompraMinorista> {
         compraMinorista.setTotalComp(rs.getDouble("totalComp"));
         compraMinorista.setEstadoComp(rs.getString("estadoComp"));
         compraMinorista.setIdMaterial(rs.getInt("Material_idMaterial"));
-        compraMinorista.setIdUsuario(rs.getInt("usuario_idUsuario"));
+        compraMinorista.setNomUsuario(rs.getString("usuario_nomUsuario"));
 
         return compraMinorista;
     }

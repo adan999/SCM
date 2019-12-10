@@ -19,8 +19,8 @@ public class MaterialServiceImpl implements MaterialService {
     @Override
     public boolean realizarMaterial(Material object) {
         try {
-            String sql = String.format("insert into Material (CodigoMaterial, NomMaterial, UnidadMedida, CantidadActual, MaterialCategoria_idMaterialCat, usuario_idUsuario) " +
-                            "values('%s', '%s', '%s', '%s', '%s', '3')",
+            String sql = String.format("insert into Material (CodigoMaterial, NomMaterial, UnidadMedida, CantidadActual, MaterialCategoria_idMaterialCat, usuario_nomUsuario) " +
+                            "values('%s', '%s', '%s', '%s', '%s', 'root3')",
                      object.getCodigoMaterial(), object.getNomMaterial(), object.getUnidadMedida(), object.getCantidadActual(), object.getIdMaterialCat());
             jdbcTemplate.execute(sql);
             return true;

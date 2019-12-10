@@ -2,9 +2,7 @@ package com.scm.scm.Controllers;
 
 
 import com.scm.scm.Constant.ViewConstant;
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.TipoMaterial;
-import com.scm.scm.Services.impl.CompraServiceImpl;
 import com.scm.scm.Services.impl.TipoMaterialServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
 import java.util.List;
 
 //Notacion declarada para que el sistema sepa que esta clase pertenece al componente Controller
@@ -28,7 +24,7 @@ public class TipoMaterialController {
     private TipoMaterialServiceImpl tipoMaterialServiceImpl;
 
     //Al entrar en esta ruta se obtendran los datos de la lista y se pasaran a la vista proporcionada
-    @GetMapping(path = "/consultarTipoMaterial")
+    @GetMapping(path = "/consultar")
     public String consultarTipoMaterial(Model model){
         try {
             model.addAttribute("tipoMaterial", tipoMaterialServiceImpl.consultarTipoMaterial());
@@ -74,7 +70,7 @@ public class TipoMaterialController {
             System.out.println("No entro");
         }
 
-        return "redirect:/tipoMaterial/consultarTipoMaterial";
+        return "redirect:/tipoMaterial/consultar";
     }
 
     /*Metodo utilizado para modificar solo el nombre del tipo de material y despues redirecciona a
@@ -91,6 +87,6 @@ public class TipoMaterialController {
         else{
             System.out.println("No entro");
         }
-        return "redirect:/tipoMaterial/consultarTipoMaterial";
+        return "redirect:/tipoMaterial/consultar";
     }
 }

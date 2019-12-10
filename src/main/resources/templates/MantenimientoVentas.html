@@ -11,87 +11,12 @@
 <div class="jumbotron">
 
 
-  <center><img src="../static/img/met.png" height="150px" width="150px"></center>
+    <center><img src="img/met.png" th:src="@{/img/met.png}" height="150px" width="150px"></center>
 </div>
-<!--INICIO BOTONES   -------------------------------------------------------------------------------------------------------->
-   <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-<!--FIN BOTONTES -->
-
-<!-- INICIO MENU -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index"><span class="icon-home3"> </span> Inicio <span class="sr-only">(current)</span></a>
-      </li>
-     
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="icon-cart"></span> Compras
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="MantenimientoCompras">  Proveedores</a>         
-          <a class="dropdown-item" href="MantenimientoCompras2"> Clientes Particulares </a>          
-        </div>
-      </li>
-     
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="icon-dollar"> </span>  Ventas
-        </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="MantenimientoVentas">  Consultar Ventas</a>
-          
-        </div>
-      </li>
-       <li class="nav-item dropdown">
-        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="icon-truck"> </span>  Proveedores
-        </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="MantenimientoProveedores"> Consultar Proveedores</a>
-          
-        </div>
-      </li>
-
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="icon-recycle"> </span>  Materiales
-        </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="Tmateriales"> Materiales</a>
-          <a class="dropdown-item" href="MantenimientoMateriales">  Tipos Materiales</a>
-          
-        </div>
-      </li>
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="icon-user"> </span> Usuarios
-        </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="MantenimientoUsuarios">  Consultar Usuarios </a>
-          
-          
-        </div>
-        <!-- 
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="icon-notebook-list"> </span> Inventario
-        </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item2" href="Inventario"> Consultar Inventario </a>
-        </div>
-      -->
-    
-  </div>
-</nav>
+<!-- Menu -------------------------------------------------------------------------------------------------------->
+<div class="site-wrap">
+    <div th:replace="fragments.html :: menu"></div>
+</div>
 <br>
 <br>
 <br>

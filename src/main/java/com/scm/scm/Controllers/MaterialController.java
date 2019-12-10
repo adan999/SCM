@@ -1,7 +1,6 @@
 package com.scm.scm.Controllers;
 
 import com.scm.scm.Constant.ViewConstant;
-import com.scm.scm.Model.Compra;
 import com.scm.scm.Model.Material;
 import com.scm.scm.Model.TipoMaterial;
 import com.scm.scm.Services.impl.MaterialServiceImpl;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.SQLOutput;
 import java.util.List;
 
 //Notacion declarada para que el sistema sepa que esta clase pertenece al componente Controller
@@ -31,7 +29,7 @@ public class MaterialController {
     private TipoMaterialServiceImpl tipoMaterialServiceImpl;
 
     //Al entrar en esta ruta se obtendran los datos de la lista y se pasaran a la vista proporcionada
-    @GetMapping(path = "/consultarMaterial")
+    @GetMapping(path = "/consultar")
     public String consultarTipoMaterial(Model model){
         try {
             model.addAttribute("material", materialServiceImpl.consultarMaterial());
@@ -90,7 +88,7 @@ public class MaterialController {
             System.out.println("No modificó");
         }
 
-        return "redirect:/material/consultarMaterial";
+        return "redirect:/material/consultar";
     }
 
     /*Metodo utilizado para modificar solo el nombre del tipo de material y despues redirecciona a
@@ -107,7 +105,7 @@ public class MaterialController {
         else{
             System.out.println("No entro");
         }
-        return "redirect:/material/consultarMaterial";
+        return "redirect:/material/consultar";
     }
 
     @GetMapping(path = "/buscarEspecificaMaterial")

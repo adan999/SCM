@@ -17,5 +17,5 @@ public class CompraMinorista {
     private double totalComp;
     private String estadoComp;
     private int idMaterial;
-    private int idUsuario;
+    private String nomUsuario;
 }
